@@ -1,4 +1,4 @@
 export let config = {
-    "token": "YgoF_kSNuEFf9MJbrZ6YejvlAZWDF33Q",
+    "token": "NzMzOTEyODI4MjgwMzA3NzYy.XxKvFg.y4LL7Khrh4iSyEAzWnIW0s2jdMM",
     "prefix": "?"
 };
