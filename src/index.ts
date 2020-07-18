@@ -1,5 +1,5 @@
 import * as Discord from "discord.js";
-import * ConfigFile from "./config";
+import * as ConfigFile from "./config";
 
 const bot: Discord.Client = new Discord.Client();
 
