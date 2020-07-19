@@ -1,3 +1,4 @@
+// Required Dependencies
 import * as Discord from "discord.js";
 import * as ConfigFile from "./config";
 import { SelfBotCommand } from "./api";
@@ -13,6 +14,7 @@ bot.on("ready", () => {
 
     // Let's us know the bot is online
     console.log("Ready to go!");
+
 });
 
 bot.on("message", msg => {
@@ -30,7 +32,7 @@ async function handle(msg: Discord.Message) {
 
     for(const commandsClass of commands) {
         try{
-            //when the command doesn't exist
+            // when the command doesn't exist
             if(!commandsClass.isCommand(command)) continue;
             await commandsClass.execute(args, msg, bot);
         }catch(exeception){
@@ -51,4 +53,5 @@ function loadCommands(commandsPath: string) {
 
 };
 
+// Starts the bot
 bot.login(ConfigFile.config.token);
