@@ -9,12 +9,18 @@ let commands: SelfBotCommand[] = [];
 
 loadCommands(`${__dirname}/commands`);
 
+// VARS
+
 // When the bot turns on
 bot.on("ready", () => {
+
+    bot.user?.setStatus('online');
+    bot.user?.setActivity('I\'m not sure');
 
     // Let's us know the bot is online
     console.log("Ready to go!");
 
+    var active_servers = 0;
 });
 
 bot.on("message", msg => {
