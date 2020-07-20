@@ -15,6 +15,7 @@ loadCommands(`${__dirname}/commands`);
 // When the bot turns on
 bot.on("ready", () => {
 
+    // Something
     bot.user?.setStatus('online');
     bot.user?.setActivity('I\'m not sure');
 
