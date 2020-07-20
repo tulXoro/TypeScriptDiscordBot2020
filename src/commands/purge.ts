@@ -6,7 +6,7 @@ export default class Purge implements SelfBotCommand {
 
     private readonly _command = "purge";
 
-    help(): string{ return "This command does nothing."; }
+    help(): string{ return "Deletes messages."; }
 
     isCommand(command: string): boolean { return command === this._command; }
 
@@ -22,8 +22,6 @@ export default class Purge implements SelfBotCommand {
             console.error(err);
             msgObj.channel.send('There was an error trying to purge messages in this channel!');
         });
-
-        msgObj.channel.send('test');
     }
 
 }

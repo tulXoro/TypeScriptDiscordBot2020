@@ -66,7 +66,6 @@ function loadCommands(commandsPath: string) {
         const command = new commandsClass() as SelfBotCommand;
         commands.push(command);
     }
-
 };
 
 // Starts the bot
