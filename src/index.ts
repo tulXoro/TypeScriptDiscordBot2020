@@ -32,12 +32,31 @@ bot.on("message", msg => {
     // If the writer of the message is the bot, stop
     if(msg.author.bot) return;
 
+    if(!msg.guild){
+        return msg.author.send('I can\'t respond to direct messages!');
+    }
+
     // If the prefix isn't used, stop
     if(!msg.content.startsWith(ConfigFile.config.prefix)) return;
 
     // Assume it is a command and handle it
     handle(msg);
 })
+
+/*
+bot.on('voiceStateUpdate', (oldMember, newMember) => {
+    //if a role isn't found, then return
+    const voice_role = oldMember.guild.roles.find(role => role.name == "In Voice Channel");
+    if(!voice_role) return;
+
+    let newUserChannel = newMember.voiceChannel
+    let oldUserChannel = oldMember.voiceChannel
+    
+    //checks when a member leaves or enters a channel
+    if(newUserChannel && !oldUserChannel) oldMember.addRole(voice_role);
+    else if(!oldUserChannel && newUserChannel) oldMember.addRole(voice_role);
+    else if(!newUserChannel) newMember.removeRole(voice_role);
+})*/
 
 async function handle(msg: Discord.Message) {
     // Splits the message into the command (the first word of the message)
